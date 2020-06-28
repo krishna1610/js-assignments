@@ -130,23 +130,52 @@
         console.log("***********");
 
         // problem 8
-        var str = 'aabbcdefa';
-        var ar = str.split(''); // empty string separator
-        var mf = 1;
-        var m = 0;
-        var item;
-        for (var i = 0; i < ar.length; i++) {
-            for (var j = i; j < ar.length; j++) {
-                if (ar[i] == ar[j])
-                    m++;
-                if (mf < m) {
-                    mf = m;
-                    item = ar[i];
-                }
-            }
-            m = 0;
+        var str = 'aabbcdefbz';
+        // var ar = str.split(''); // empty string separator
+        var freqs = [];
+        for (var i = 0; i < 26; i++) {
+            freqs.push(0);
         }
-        console.log(item);
+        // console.log (freqs); // [0, 0, 0, 0, ..., 0] 26 times
+        // freqs[0]++ --> a
+        // freqs[1]++ --> b
+        // freqs[25]++ --> z
+        for(var i=0;i<str.length;i++){
+            var k = str.charCodeAt(i); // a --> 91+0, b --> 92+1, c --> 93+2, z --> 91+25
+            var x = k - 'a'.charCodeAt(0); // a -->0 b -->1 z -->25
+            freqs[x]++;
+        }
+        // console.log (freqs); // [2, 3, 1, 1, 1, 1, ..., 1] 26 times
+        var maxFreq = freqs.max(); // 3
+        var indexOfMaxFreq = freqs.indexOf(maxFreq);
+        var res = String.fromCharCode(indexOfMaxFreq +'a'.charCodeAt(0));
+        console.log(res);
+
+        // for(var k=0; k<freqs.length;k++){ //k -> 0 to 25
+        //     if(freqs[k]==max){
+        //         var res = String.fromCharCode(k+'a'.charCodeAt(0));
+        //         console.log(res);
+        //         break; // to print all max chars remove this break 
+        //     }
+        // }
+
+        // var af = 0;
+        // var bf = 0;
+        // var mf = 1;
+        // var m = 0;
+        // var item;
+        // for (var i = 0; i < ar.length; i++) {
+        //     for (var j = i; j < ar.length; j++) {
+        //         if (ar[i] == ar[j])
+        //             m++;
+        //         if (mf < m) {
+        //             mf = m;
+        //             item = ar[i];
+        //         }
+        //     }
+        //     m = 0;
+        // }
+        // console.log(item);
 
         console.log("***********");
 
