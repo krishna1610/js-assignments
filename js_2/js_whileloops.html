@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> While Loops Example</title>
+</head>
+
+<body>
+    <h1>While Loops</h1>
+
+    <script>
+        // 1
+
+        console.log("1 to 30 numbers :");
+        var num = 1;
+
+        while (num <= 30) {
+            console.log(num);
+            // document.write( num + "<br>" );
+            num++;
+        }
+
+        // 2
+
+        document.write("reverse 10 to 1 numbers :");
+        var i = 10;
+        while (i > 0) {
+            document.write("<br>" + i);
+            i--;
+        }
+
+
+        // 3
+
+        document.write(" <br> print 12 to 33 and at the end sum of that numbers :");
+
+        var sum = 0,
+            j = 12;
+        while (j <= 33) {
+            document.write("<br>" + j);
+            sum = sum + j;
+            j++;
+
+        }
+        document.write("<br> The sum of numbers is : " + sum);
+
+
+        //  4
+
+        console.log("odd numbers:");
+        var k = 1;
+        while (k <= 30) {
+            if (k % 2 !== 0) {
+                console.log(k);
+            }
+            k++;
+        }
+
+
+        // 5 
+        console.log("even numbers:");
+        var k = 1;
+        while (k <= 30) {
+            if (k % 2 === 0) {
+                console.log(k);
+            }
+            k++;
+        }
+
+
+
+        // 6
+        console.log("prime numbers:");
+        var k = 2;
+        while (k <= 100) {
+            var flag = true;
+            var j = 2;
+            while (j <= k - 1) {
+                if (k % j == 0) {
+                    flag = false;
+                    break;
+                }
+                j++
+            }
+            if (flag == true) {
+                console.log(k);
+            }
+
+            k++;
+        }
+
+        // console.log("prime numbers:");
+        // for(var k = 2 ; k <= 100 ; k++){
+        //     var flag = true;
+        //     for(var j = 2 ; j <= k-1 ; j++) {
+        //         if(k % j == 0){
+        //             flag = false;
+        //             break;
+        //         }
+        //     }
+        //     if(flag == true){
+        //         console.log(k);
+        //     }
+
+        // }
+    </script>
+</body>
+
+</html>

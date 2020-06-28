@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class 1</title>
+</head>
+
+<body>
+
+    <h1>JS CLASS 1</h1>
+
+    <script>
+        //  1)swap var with extra var
+        var a = 3;
+        var b = 5;
+        var t;
+
+        t = a;
+        a = b;
+        b = t;
+
+        console.log("Value of a after swapping : ", a);
+        console.log("Value of b after swapping : ", b);
+
+
+        //  2)swap var without extra var
+
+        var a = 10;
+        var b = 12;
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        console.log("Value of a after swapping : ", a);
+        console.log("Value of b after swapping : ", b);
+
+        //  3)find the next nearest Hundred
+
+        // Use Math.ceil(), if you want to always round up
+        var num = 25;
+        var rounded = Math.ceil(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        var num = 3;
+        var rounded = Math.ceil(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        var num = 125;
+        var rounded = Math.ceil(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        var num = 250;
+        var rounded = Math.ceil(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        var num = 1432;
+        var rounded = Math.ceil(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        //To round up and down to the nearest 100 use Math.round
+        var num = 801;
+        var rounded = Math.round(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+        var num = 270;
+        var rounded = Math.round(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+
+        var num = 3;
+        var rounded = Math.round(num / 100) * 100;
+        console.log("nearest hundred is:", rounded);
+
+
+        //  4)Given a string s. Convert it in to a list, where each element in the list is a character in the string. (Hint : use string methods)
+
+        var str = "welcome to js class";
+        var list = str.split(" ");
+        console.log(list);
+
+
+        var str = "abcd";
+        var arr = str.split("");
+        var text = "";
+        var i;
+        for (i = 0; i < arr.length; i++) {
+            text += arr[i];
+        }
+        console.log(arr);
+
+
+        // 5)Given a List. Create a new list without the first and the last element
+        var fruits = "abcdefg"
+        var newFruits = fruits.slice(1, -1);
+        console.log(newFruits);
+
+        
+        // 6)Given a string. Find the substring which is the last half of the string.
+        var list = "krishnakrishna";
+        var newlist = list.slice((list.length/2));
+        console.log(newlist);
+
+
+        // 7)Given a list. Print the reverse of the List
+
+        var list = "abcd";
+        for(var i=list.length-1;i>=0;i--){
+		console.log(list[i]);
+	    }
+	
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+    <h1>String Example</h1>
+
+    <script>
+        //  1
+        var y = '3' + 5 + 6;
+        console.log(y);
+
+        // 2
+        var x = 3 + '5' + 6;
+        console.log(x);
+
+        // 3
+        var z = 3 + 5 + '6';
+        console.log(z);
+
+        // 4
+        var str = "Pneumonoultramicroscopicsilicovolcanoconiosis";
+        var str1 = str.length;
+        console.log(str1);
+
+        // 5
+        var str2 = str.toUpperCase();
+        console.log(str2);
+
+        // 6
+        var str2 = str.toLowerCase();
+        console.log(str2);
+
+        // 7
+        var string =
+            "I like this product; I hate this product; This product is worth buying; I don’t agree with the above user";
+        var arr = string.split(";");
+        console.log(arr);
+
+
+        // 8
+
+        var count = string.match(/o/g).length;
+        console.log(count);
+
+        // or (8)
+
+        var count = 0;
+        for(var i=0; i<string.length;i++){
+            if(string[i]==="o"){
+                count = count+1;
+            }
+        }
+        console.log(count);
+
+
+    </script>
+
+</body>
+
+</html>

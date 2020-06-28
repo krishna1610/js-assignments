@@ -1,0 +1,210 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Array</title>
+</head>
+
+<body>
+    <h1>Advance Array</h1>
+    <script>
+        // problem 1
+        var a = [1, 2, 3];
+        for (var i = 0; i < a.length; i++) {
+            a[i] = a[i] * a[i] * a[i];
+        }
+        console.log(a);
+
+
+        console.log("***********");
+        // problem 2
+
+        var x = [4, 7, 1, 4, 9];
+        var higest = 0;
+        var secondhigh = 0;
+        for (var i = 0; i < x.length; i++) {
+            if (x[i] > higest) {
+                secondhigh = higest;
+                higest = x[i];
+            }
+            if (x[i] != higest && x[i] > secondhigh) {
+                secondhigh = x[i];
+            }
+        }
+        console.log(higest);
+        console.log(secondhigh);
+
+
+        console.log("***********");
+
+        // problem 3
+
+        var x = [1, 2, 3, 4];
+        for (var i = x.length - 1; i >= 0; i--) {
+            console.log(x[i]);
+        }
+
+        console.log("***********");
+
+        // problem 4
+        var str = "ababa";
+        for (var i = str.length; i > 0; i--) {
+            if (str[i] = str.charAt(str.length) - 1) {
+                console.log('"ababa" is palindrome.');
+            } else {
+                console.log('"ababa" is not palindrome!');
+            }
+        }
+
+        console.log("***********");
+        // problem 5
+
+        var x = "may";
+        var y = "amy";
+        if (x.length != y.length) {
+            console.log("not");
+
+        } else {
+            var st1 = x.split(''); // empty string separator
+
+            var st2 = y.split(''); // empty string separator
+
+            var str1 = st1.sort();
+            var str2 = st2.sort();
+
+            var x1 = str1.toString();
+            var y1 = str2.toString();
+
+            if (x1 == y1) {
+                console.log("yes");
+            } else {
+                console.log("no");
+            }
+        }
+
+        console.log("***********");
+
+        //problem 6
+
+        function factorialize(num) {
+            if (num < 0)
+                return -1;
+            else if (num == 0)
+                return 1;
+            else {
+                return (num * factorialize(num - 1));
+            }
+        }
+        var result = factorialize(5);
+        console.log(result);
+
+
+        console.log("***********");
+
+        var inputNumber = 5;
+        var total = 1;
+
+        for (i = 0; i < inputNumber; i++) {
+            total = total * (inputNumber - i);
+        }
+
+        console.log(inputNumber + '! = ' + total);
+
+        console.log("***********");
+
+        // problem 7
+        var arr = [4, 3, 1, 9, 8, 3];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = arr.length; j >= 0; j--) {
+                if (arr[j - 1] > arr[j]) {
+                    var z;
+                    z = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = z;
+                }
+            }
+        }
+        console.log(arr);
+
+        console.log("***********");
+
+        // problem 8
+        var str = 'aabbcdefa';
+        var ar = str.split(''); // empty string separator
+        var mf = 1;
+        var m = 0;
+        var item;
+        for (var i = 0; i < ar.length; i++) {
+            for (var j = i; j < ar.length; j++) {
+                if (ar[i] == ar[j])
+                    m++;
+                if (mf < m) {
+                    mf = m;
+                    item = ar[i];
+                }
+            }
+            m = 0;
+        }
+        console.log(item);
+
+        console.log("***********");
+
+        // problem 9
+
+        console.log("***********");
+
+        var arr = ["a","a","b","cb"]  ;
+        var a = [];
+        for(var i=0; i<arr.length; i++){
+            var current = arr[i];
+            if(a.indexOf(current)<0){
+                a.push(current);
+            }
+        }
+        console.log(a);
+
+
+        // problem 10
+        var sen = "quick brown fox";
+        var str = sen.split(" ");
+        var newString = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+            newString += str[i] + " ";
+        }
+        console.log(newString);
+
+        console.log("***********");
+
+        // problem 11
+        var str = "abc1_ef1";
+        for (var i = 0; i < str.length; i++) {
+            if (parseInt(str[i])) {
+                console.log("yes,the string has a number");
+                break;
+            }
+        }
+
+        console.log("***********");
+
+        // problem 12
+        var arr1 = [1, 4, 9];
+        var arr2 = [2, 3, 12];
+        for (var i = 0; i < arr2.length; i++) {
+            arr1.push(arr2[i]);
+        }
+        //console.log(arr1);
+        for (var j = 0; j < arr1.length; j++) {
+            for (var k = j + 1; k < arr1.length; k++) {
+                if (arr1[j] > arr1[k]) {
+                    temp = arr1[j];
+                    arr1[j] = arr1[k];
+                    arr1[k] = temp;
+                }
+            }
+        }
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

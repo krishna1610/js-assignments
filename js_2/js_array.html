@@ -1,0 +1,207 @@
+<html>
+    <head>
+        <title>Array</title>
+    </head>
+    <body>
+        <h1>Array</h1>
+        <script>
+            // 1
+            function displayQuotes() 
+            {
+                var sayings = ["Love For All, Hatred For None.", "Change the world by being yourself.",
+                    "Every moment is a fresh beginning.", "Never regret anything that made you smile.",
+                    "Die with memories, not dreams.", "Aspire to inspire before we expire.",
+                    "Everything you can imagine is real.", "Simplicity is the ultimate sophistication.",
+                    "Whatever you do, do it well.", "What we think, we become."
+                ];
+
+                for (var i = 0; i < sayings.length; i++)
+                {
+                    console.log(sayings[i]);
+                }
+
+            }
+            displayQuotes();
+
+        
+            // 2
+
+            function array(a) 
+            {
+                //length
+                var len = a.length;
+                console.log(len);
+
+                //print from index 4
+                var print = a.slice(4);
+                console.log(print);
+
+            
+            // 3
+            // a
+        
+            var popping_element = a.pop();
+            console.log(popping_element);
+            // b
+            var x = a.length;
+            console.log(x);
+            // c
+            var rev = a.reverse();
+            console.log(rev);
+
+            // d
+            var access = a[7];
+            console.log(access);
+
+            // e
+            var shif = a.shift();
+            console.log(shif);
+
+            // f
+            var y = a.length;
+            console.log(y);
+
+            // g 
+
+            var z = a.sort();
+            console.log(z);
+
+            }
+            array(['banana', 'mango', 'kiwi', 'orange', 'apple', 'watermelon', 'lemon', 'dragon', 'grapes']);
+
+        
+            // 4
+            var inputArray = [];
+            var size = 5; //Maximum Array size
+            for (var i = 0; i < size; i++) {
+                //Taking Input from user
+                inputArray[i] = prompt('Enter Element ' + (i + 1));
+            }
+            //Print the array in the console.
+            console.log(inputArray);
+
+            var newarr = inputArray.push('200'); //6
+            //console.log(inputArray); to print new array
+            console.log(newarr);
+            //console.log(inputArray.length);
+
+            var newarr1 = inputArray.unshift('100','300');
+            console.log(newarr1);
+
+            inputArray.splice(2,0,'45678');
+            console.log(inputArray.length);
+            console.log(inputArray);
+            var acc = inputArray[5];
+            console.log(acc);
+
+            var sli = inputArray.slice(2,5);
+            console.log(sli);
+
+
+
+
+            // 5
+            var month = ['jan','feb','march','april','may','june','july','aug','sep','oct','nov','dec'];
+            console.log(month);
+            var month1 = month.pop();
+            //console.log(month1); value of pop will return
+            console.log(month.length);
+            var month2 = month.reverse();
+            console.log(month2);
+            var acc = month[8];
+            console.log(acc);
+            var month3 = month.shift();
+            console.log(month.length);
+            var sorting = month.sort();
+            console.log(sorting);
+
+            var pushing = month.push("january");
+            console.log(month.length);
+
+            var month4 = month.unshift("december");
+            console.log(month.length);
+
+            month.splice(2,0,"march");
+            console.log(month.length);
+            console.log(month);
+
+            var acc = month[5];
+            console.log(acc);
+
+            var sli = month.slice(4,8);
+            console.log(sli);
+            console.log(month);
+
+            var newarray = inputArray.concat(month);
+            for(var i=0;i<newarray.length;i++){
+                console.log(newarray[i]);
+            }
+           
+
+
+
+            // 6
+            var a = ["Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday"];
+            a.forEach(function (entry) {
+                console.log(entry);
+            });
+            // 7
+            var day =['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+            var user =prompt('enter the day name');
+
+                if(user == 'monday'){
+                    console.log(day.slice(1,6));
+                }else if(user == 'tuesday'){
+                    console.log(day.slice(2,6));
+                }else if(user == 'wednesday'){
+                    console.log(day.slice(3,6));
+                }else if(user == 'thursday'){
+                    console.log(day.slice(4,6));
+                }else if(user == 'friday'){
+                    console.log(day.slice(5,6));
+                }else if(user == 'saturday'){
+                    console.log(day.slice(6,7));
+                }else{
+                    console.log("it is the last day of the week.");
+                }
+            // 8
+
+            var day =['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+            var user =prompt('enter the day name');
+
+            for( var i = 0; i<day.length; i++){
+                if(user == day[i]){   
+                    var result1 = day.slice([i+1],day.length);
+                    var result2 = day.slice(0,[i+1]);
+                    var result3 = result1.concat(result2);
+                    console.log(result3);
+                }
+            }
+            // 9
+            var arr = ['1', '2', '3', '4'];
+            var searchInput = prompt('Enter the search value:');
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == searchInput) {
+                    var result = 1;
+                }
+            }
+            if (result == 1) {
+                alert("match");
+            } else {
+                alert("no match");
+            }
+            //10 
+            var arr1 = ['1','2','3','4','5'];
+            var arr2 = ['1','2','3','4','5'];
+            for(var i=0,j=0;i<arr1.length,j<arr2.length;i++,j++)
+            {
+                if(arr1[i] == arr2[j]){
+                    alert("There is a match");
+                }else{
+                    alert("there is no match");
+                }
+            }
+
+        </script>    
+    </body>
+</html>

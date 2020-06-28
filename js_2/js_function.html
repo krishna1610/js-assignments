@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <h1>Function Example</h1>
+
+    <script>
+        // 1
+        function add(a, b) {
+            var sum;
+            sum = a + b;
+            return sum;
+        }
+        var result = add(5, 7);
+        console.log(result);
+
+        // 2
+        function add1(a) {
+            var sum = 0;
+            for (var i = 0; i < a.length; i++) {
+                sum = sum + a[i];
+            }
+            return sum;
+        }
+        var result = add1([5, 7, 9, 10, 20]);
+        console.log(result);
+
+        // 3
+
+        function multiplication(b) {
+            var mult = 1;
+            for (var i = 0; i < b.length; i++) {
+                mult = mult * b[i];
+            }
+            return mult;
+        }
+        var result1 = multiplication([5, 7, 10, 3, 9, 8]);
+        console.log(result1);
+    </script>
+</body>
+
+</html>
