@@ -1,0 +1,140 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PROBLEMS</title>
+</head>
+
+<body>
+    <h1>DOM PROBLEMS</h1>
+
+    <!-- problem 1 -->
+    <div>
+        <p id="demo">This is the problem 1 paragraph.</p>
+        <button onclick="myFunction()">Click me</button>
+    </div>
+
+
+
+
+    <!-- problem 2 -->
+    <div>
+        <p id="demo1">This is the problem 2 paragraph.</p>
+        <button onclick="color()">Click me</button>
+    </div>
+    <br>
+
+
+
+    <!-- problem 3  -->
+    <div>
+        <label>First</label>
+        <input type="text" name="textbox1" id="textbox1">
+        <label>Second</label>
+        <input type="text" name="textbox2" id="textbox2">
+        <button onclick="textbox()">Click me</button>
+    </div> <br>
+
+
+    <!-- problem 4 -->
+    <div>
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="An bird image"
+            id="imgClickAndChange">
+        <button onclick="changeimg()">change img</button>
+        <button onclick="hide()">hide and show</button>
+    </div>
+
+    <!-- problem 5 -->
+    <div>
+        <img src="https://www.designyourway.net/blog/wp-content/uploads/2018/08/387011_3d-cute-wallpapers-for-desktop-hd-1-jpg_1024x768_h-700x525.jpg"
+            id="imgid" alt="cute image">
+        <button onclick="prev()">PREV</button>
+        <button onclick="next()">NEXT</button>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        // problem 1
+        function myFunction() {
+            var x = document.getElementById("demo").textContent;
+            document.getElementById("demo").innerHTML = alert(x);
+        }
+
+
+        // problem 2 
+        function color() {
+            let y = document.getElementById("demo1");
+            y.style.backgroundColor = "blue";
+            y.style.color = "white";
+
+        }
+
+        // problem 3
+        function textbox() {
+            var n1 = document.getElementById('textbox1');
+            var n2 = document.getElementById('textbox2');
+            n2.value = n1.value;
+        }
+
+        // problem 4 
+        // ask for review 
+        function changeimg() {
+            document.getElementById("imgClickAndChange").src = "https://cdn.eso.org/images/thumb300y/eso1907a.jpg";
+        }
+
+        function hide() {
+            var x = document.getElementById("imgClickAndChange");
+            if (x.style.display == "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        // problem 5
+        var arr = [
+            'https://cdn.cnn.com/cnnnext/dam/assets/191203174105-edward-whitaker-1-large-169.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcy4LT4MLnDDAVSa6B1YNoeyh-UEDYByNIIw&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdpsd38Ye366zPo9jMgIu4RQRQpY9SyzFpvQ&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSjESkzn2LUxELhnqZZWBbmGwtbqfFsaemB9w&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTnoxbwYQm-icE0TFD2F8FgUWFTFHgRT1KNg&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXRvUBtumSw6XlzUX71fhs3hcSqe2Crm2bqQ&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT3Wjd-Cak78mooEfHTx64D7xhFtgBMZRFiiQ&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3LGP0MdDmkgfCGUiRazVt5qPc3DVQv8qmSg&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJ1qH86Jy7UdgK-VDCgg-zD7_5mCYOBsDhwg&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQx_YyKBX-j37lH5Uy4NgjPr6Niw_NZQMFwsg&usqp=CAU'
+        ];
+        let Current = 0;
+        document.getElementById("imgid").innerHTML = arr[Current];
+
+        function prev() {
+            if (Current == 0) {
+                Current = arr.length - 1;
+            } else {
+                Current--;
+            }
+
+            document.getElementById("imgid").src = arr[Current];
+
+        }
+
+        function next() {
+            if (Current == arr.length - 1) {
+                Current = 0
+            } else {
+                Current++;
+            }
+
+            document.getElementById("imgid").src = arr[Current];
+
+        }
+    </script>
+</body>
+
+</html>
