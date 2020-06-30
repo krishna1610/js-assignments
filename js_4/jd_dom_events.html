@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom and Events</title>
+</head>
+
+<body onload="loadfun()" id="hide">
+
+    <h1>DOM AND EVENTS</h1>
+
+    <!-- problem 1 -->
+    <!-- <label for="p1">Fahrenheit :</label>
+    <input type="text" id="p1" onkeyup="temconvetor()">
+    <div id="cel"></div> -->
+
+    <!-- problem 2 -->
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR1AIuaQQHVxQ-bTUlEunp7v6GEwiZFV_vGw&usqp=CAU"
+        alt="good morning">
+    <p>This is problem 2 para</p>
+    <div>
+        <ul>
+            <li>good morning</li>
+            <li>good afternoon</li>
+            <li>good evening</li>
+        </ul>
+    </div> -->
+
+
+    <!-- problem 3 -->
+    <p class="otherEmts">This is para 3</p>
+    <p class="otherEmts">This is para 4</p>
+    <p class="otherEmts">This is para 5</p>
+    <input type="button" onclick="hide()" value="hide" id="hideElems">
+
+    <!-- problem 4 -->
+    <input type="button" id="showElems" value="show">
+    <!-- problem 5 -->
+    <!-- problem 6 -->
+    <!-- problem 7 -->
+    <!-- problem 8 -->
+    <!-- problem 9 -->
+    <!-- problem 10 -->
+
+
+
+
+
+    <script>
+        // problem 1
+        // function temconvetor() {
+        //     let element = document.getElementById("p1");
+        //     let fahrenheit = element.value;
+        //     if (isNaN(fahrenheit)) {
+        //         element.style.borderColor = "#f51707";
+        //         prompt("enter correct values");
+        //     } else {
+        //         let celsius = (fahrenheit - 32) * (5 / 9);
+        //         document.getElementById("cel").innerText = Math.round(celsius);
+        //     }
+        // }
+
+        // problem 2
+        // function loadfun() {
+        //     alert("welcome to my blog");
+        // }
+
+
+        // problem 3
+        function hide() {
+
+            // var elements = document.getElementsByClassName("otherEmts");
+            // for (var i = 0; i < elements.length; i++) {
+            //     //elements[i].style.visibility = "hidden"; // or
+            //     elements[i].style.display = "none"; // depending on what you're doing
+            // }
+
+
+document.children // head,body
+var x = document.getElementsByTagName("body");
+var y = x[0];
+var z = y.children;
+for(let i=0;i<z.length;i++){
+    if(z[i] == document.getElementById("hideElems") || z[i] == document.getElementById("showElems")){
+        z[i].style.display = "block";
+        
+    }else{
+        z[i].style.display = "none";
+    }
+}
+
+        }
+
+
+        // problem 4
+
+        // problem 5
+        // problem 6
+        // problem 7
+        // problem 8
+        // problem 9
+        // problem 10
+    </script>
+
+</body>
+
+</html>
