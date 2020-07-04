@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise</title>
+</head>
+
+<body>
+    <h1>String , Array and DOM Problems</h1>
+
+    <p id="change">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit voluptates ex aut,
+        molestias vel
+        rerum suscipit enim, totam architecto, iste nulla quae doloribus debitis aliquid laudantium atque! Hic, quasi.
+    </p>
+
+    <script>
+        // problem 1
+        // takes a string and returns the reversed string.
+        // Example:- "This is a string" -> "string a is This".
+
+        var str = "This is a string";
+        var strcopy = str.split(" ").reverse().join(" ");
+        console.log('\"' + strcopy + '\"');
+
+        // problem 2
+        // takes an array of numbers and returns the sum. ( use reduce )
+
+        var arr = [3, 6, 8, 30, 90, 78, 34, 56, 69, 12, 45];
+        var result = arr.reduce(function sum(x, y) {
+            return x + y
+        });
+        console.log(result);
+
+        // probelm 3
+        // takes an array of numbers and returns the sum of numbers divisible by 3.
+        //Fizzbuzz problem in Javascript
+
+        var arr = [3, 8, 9, 10, 12, 34, 16, 78, 99, 33, 45];
+        var result = arr.filter(function div(x) {
+            if (x % 3 == 0) {
+                return x;
+            }
+        });
+        console.log(result);
+
+        // problem 4
+        // takes a string with hashtags and returns the usernames of people as an array.
+        // Example:- "Today is a beautiful day. #morning #inspiration".
+        // Output :- ["morning","inspiration"]
+        var str1 = "Today is a beautiful day. #morning #inspiration";
+        var strcopy1 = str1.split(" ");
+        var result1 = strcopy1.filter(function (x) {
+            return x.charAt(0) == "#";
+        });
+        //console.log(result1);
+        var finalresult1 = result1.map(function (y) {
+            return y.slice(1);
+        });
+        console.log(finalresult1);
+
+
+        // probelm 5
+        // DOM Question
+        // Make a paragraph when clicked it changes atleast 3 colors as you click and circles between them.
+        // For colors like: ["red","green","blue"]
+        // As you click you should see red-> green-> blue-> red-> green->....and so on.
+
+
+        // let changeColor = document.getElementById('change'),
+        //  colors = ['red', 'green', 'blue'];
+        // let colorIndex = 0;
+
+        // changeColor.addEventListener('click', () => {
+        //     document.getElementById("change").style.color = colors[colorIndex];
+        //     colorIndex = (colorIndex + 1) % colors.length
+        // });
+
+        var changecolor = document.getElementById("change");
+        var colorcount = 0;
+        changecolor.addEventListener("click", () => {
+            var colorlist = ["red","blue","green","yellow"];
+            document.getElementById("change").style.color = colorlist[colorcount];
+            colorcount++;
+
+            if(colorcount === colorlist.length){
+                colorcount = 0;
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
