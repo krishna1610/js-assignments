@@ -1,0 +1,16 @@
+Make a reusable function that takes four arguments:-
+_________________________________________________
+
+i) element ( element name )   [string]
+ii) prop --> ( property name ) [string]
+iii) val --> ( value for that property ) [string]
+iv) firstOnly ( if true then only first element with that name will change) [boolean] 
+
+<><><><><><><><><><><><><><><><><><><><><><><><><><>
+Then use it to do the following:
+
+1. Change all paragraph color to red.
+2. Give every image a border of 1px solid pink
+3. Hide all paragraphs.
+4. Hide only the first paragraph.
+

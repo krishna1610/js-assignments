@@ -1,0 +1,28 @@
+Task 1:
+__________________
+You can use Regexr.com. 
+
+Make an password input box with a paragraph which shows "valid!" or "invalid" based on if the input value 
+passed the following tests, which is that password is:-
+i) atleast 8 characters.
+ii) one uppercase letter.
+iii) one number.
+iv) one lower case letter.
+v) should not start with space.
+
+
+Task 2:
+___________________
+
+Make two input boxes, one for name of user and second for the comment the user wants to write.
+Have a 'Send' button or text which can be clicked.
+On click of Send display the comment as follows inside a <div> element.
+
+Example:- "John" as user value and "Nice Jeans" as comment box value.
+Paragraph with string "John Says- Nice Jeans" should be appended to the <div>
+
+Other Requirements:-
+1. On click of Send button/text both input boxes should become empty again.
+2. On click of Send button/text the focus should go to first input box again.
+
+

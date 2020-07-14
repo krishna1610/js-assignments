@@ -1,0 +1,19 @@
+Q1. Write a closure function that generates multiples 
+of 3.
+Make sure the inner function returns that number 
+after calculation.
+
+
+Q2. Write a function that:-
+    1. Takes an array and reverses numbers in 
+    the array but does not change the original 
+    array declared outside the function.
+    2. adds numbers like this when called:-
+    	add(2)(3) will return 5.
+
+Bonus:- ( Great for understanding the concept)
+____________________________________
+ Write a function that takes a big array which 
+ holds other arrays that have numbers in them 
+ and reverses all the numbers in each array and 
+ returns the new array.

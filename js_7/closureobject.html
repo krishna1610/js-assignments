@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Object</title>
+</head>
+
+<body>
+    <h1>Closure Object</h1>
+    <script>
+        // 1
+        function mainclosure() {
+            var counter = 0;
+            return function innerfunction() {
+                var res = counter+=3;
+                return res;
+            }
+        }
+        var innerfxn = mainclosure();
+        console.log(innerfxn());
+        console.log(innerfxn());
+        console.log(innerfxn());
+        console.log(innerfxn());
+        console.log(innerfxn());
+        console.log(innerfxn());
+        
+
+        console.log("***********");
+
+        // 2
+        // 2(1)
+        function rev(nums){
+            var arr1 = [];
+            for(var i=0;i<nums.length;i++){
+                arr1.push(nums[i]);
+            }
+            
+            arr1.reverse();
+            return arr1;
+        }
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+
+        console.log(rev(arr));
+        console.log(arr);
+
+
+        console.log("***********");
+        // 2(2)
+        function add(a) {
+            return function (b) {
+                return a + b;
+            }
+        }
+        console.log(add(2)(3));
+
+
+        console.log("***********");
+        // bonus
+        
+        // result ==> [[3,2,1],[6,5,4],[10,8,7]]
+        function reverse(nums){ // nums = [[1,2,3,5], [4,5,6], [7,8,10]]
+            var resultarr = []; // resultarr = []
+            for(var i=0;i<nums.length;i++){ // i=0
+                var innernums = nums[i]; // i=0: innernums=[1,2,3,5]
+
+                var innerresultarr = []; // innerresultarr = [1,2,3,5]
+                for(var j=0;j<nums[i].length;j++){ // j=1
+                   innerresultarr.push(innernums[j]); // innernums[1] =5,
+                }
+                innerresultarr.reverse(); // [5,3,2,1]
+                resultarr.push(innerresultarr); // [5,3,2,1]
+            }
+            return resultarr;
+
+        } 
+        var numsList = [[1,2,3,5], [4,5,6], [7,8,10]];
+        console.log(reverse(numsList));
+        console.log(numsList);
+
+    </script>
+
+</body>
+
+</html>

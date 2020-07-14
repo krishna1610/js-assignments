@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extra</title>
+</head>
+
+<body>
+    <h1>Extra Practice</h1>
+
+    <script>
+        // Prints a full name where last is followed by a ", " and the capital letter
+        // of first, which is followed by a "."
+
+
+        function printName(first, last) {
+            var fullname = last.charAt(0).toUpperCase() + last.substring(1) + ", " + first.slice(0, 1).toUpperCase() +
+                ".";
+            return fullname;
+        }
+        console.log(printName("Abby", "Stepp"));
+        console.log(printName("George", "Boole"));
+        console.log(printName("Alan", "Turing"));
+        console.log(printName("steve", "JOBS"));
+        console.log(printName("Archie", "Ferguson"));
+        console.log(printName("Mr. Foo", "O' Smithy"));
+
+
+
+        //print 
+        console.log("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
+        console.log("|| RESPECT THE CURL! ||");
+        console.log("///////////////////////");
+
+
+        //min-max
+        var min = 10;
+        var max = 17 - 16 / 4;
+        max += 6;
+        min = max - min;
+        console.log(max * 2);
+        console.log(max + min);
+        console.log(max);
+        console.log(min);
+
+        // 1
+        // 22
+        // 333
+        for (var i = 1; i <= 7; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(i);
+            }
+            document.write('<br />');
+        }
+
+        // //#
+        // //##
+        // //###
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write("#");
+            }
+            document.write('<br />');
+        }
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex and DOM</title>
+</head>
+<body>
+    <h1>Regex and DOM</h1>
+    <!-- 1 -->
+    <input type="password" id="password">
+    <button onclick="checkpassword()">Submit</button>
+    <p id="para"></p>
+
+    <!-- 2 -->
+    <input type="text" placeholder="name" id="name">
+    <input type="text" placeholder="comment" id="comment">
+    <button onclick="submit()">Send</button>
+
+    <div id="user">
+        
+
+    </div>
+
+    <script>
+        // 1
+        function checkpassword(){
+            var reg1 = /^[^\s-]/
+            var reg2 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
+            //var regex =/^[^\s-](?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[a-zA-Z\d]).{8,}$/;
+            // var para = document.getElementById("para");
+            if(reg1.test(document.getElementById("password").value) && reg2.test(document.getElementById("password").value)){
+                document.getElementById("para").innerHTML = "<b>valid</b>";
+            }else{
+                document.getElementById("para").innerHTML = "<b>invalid</b>";
+                document.getElementById("password").value = "";
+            }
+            
+         
+
+        }
+
+
+        // 2
+        var uname = document.getElementById("name");
+        var ucomment = document.getElementById("comment");
+        var user = document.getElementById("user");
+        
+        function submit(){
+            var username = uname.value;
+            var usercomment = ucomment.value;
+            var para = document.createElement("p");
+            var textNode = document.createTextNode(username + " says " + usercomment);
+            para.appendChild(textNode);
+            user.appendChild(para);
+            uname.value = "";
+            ucomment.value = "";
+            uname.focus();
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
