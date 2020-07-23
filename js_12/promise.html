@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+
+<body>
+    <h1>Promise</h1>
+
+    <script>
+        var promise = new Promise(function (resolve, reject) {
+
+            var randomnum = Math.floor((Math.random() * 20) + 1);
+            console.log(randomnum);
+            if (randomnum >= 1 && randomnum <= 10) {
+                resolve(randomnum);
+            } else {
+                reject(randomnum);
+            }
+        });
+
+        
+        promise.
+        then(function (num) {
+
+            console.log(num + ' in range');
+        }).
+        catch(function (num) {
+            console.log(num + ' is out of range');
+        }).
+        finally(function () {
+            console.log('done making decision');
+        });
+
+        
+    </script>
+</body>
+
+</html>

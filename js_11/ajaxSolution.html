@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table,tr,td,th {
+        border:1px solid black;
+        text-align: center
+      }
+    </style>
+    <title>JS Practice</title>
+    <div>
+      <table id="mytable">
+        
+      </table>
+    </div>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var mytable = document.getElementById("mytable")
+      var xhttp = new XMLHttpRequest();
+      // This code will run only once. when you load the page...
+      var headings = ['name', 'zipcode', 'lat', 'lng', 'website','phone']
+
+      var headingRow = document.createElement('tr');
+      for(var i = 0; i< headings.length; i++) {
+        var th = document.createElement('th');
+        var thVal = document.createTextNode(headings[i]);
+        th.appendChild(thVal);
+        headingRow.appendChild(th);
+      }
+      mytable.appendChild(headingRow);
+
+
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var arr = JSON.parse(this.responseText)
+          for (var i=0;i<arr.length;i++) {
+            var tr = document.createElement('tr');
+            var obj = arr[i];
+
+            var itemsMapping = [obj.name,obj.address.zipcode,obj.address.geo.lat,obj.address.geo.lng,obj.website, obj.phone]
+          
+            for(var j=0;j<itemsMapping.length;j++) {
+              var td = document.createElement('td');
+              var tdVal = document.createTextNode(itemsMapping[j]);
+              td.appendChild(tdVal);
+              tr.appendChild(td);
+            }
+            mytable.append(tr);
+          }
+        }
+      };
+      xhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+      xhttp.send();
+    </script>
+  </body>
+</html>

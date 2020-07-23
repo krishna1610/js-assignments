@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Strorage</title>
+</head>
+<body>
+    <h1>Local Strorage</h1>
+    <input type="text" placeholder="input" id="input">
+    <button onclick="local()">submit</button>
+    <div id="div">
+
+    </div>
+
+    <script>
+        var userinput = document.getElementById("input");
+       
+        var div_input = document.getElementById("div");
+       
+        var arr=JSON.parse(localStorage.getItem("input")) || [];
+
+        window.onload=function(){
+                var myitems=localStorage.getItem("input")
+                var arr1=JSON.parse(myitems)
+                for(var i=0;i<arr1.length;i++){
+                    var p=document.createElement("p")
+                var mytn=document.createTextNode(arr1[i])
+                p.appendChild(mytn)
+                mycontainer.appendChild(p)
+                }
+            }
+
+
+        function local(){
+            var user_input = userinput.value;
+            var para = document.createElement("p");
+            var textNode = document.createTextNode(user_input);
+            para.appendChild(textNode);
+            div_input.appendChild(para);
+            userinput.value = "";
+            userinput.focus();
+            localStorage.setItem("input",JSON.stringify(arr));
+        }
+    </script>
+</body>
+</html>

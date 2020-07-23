@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX CALL</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AJAX CALL</h1>
+    <table id="mytabledata">
+        <tr>
+            <th>Name</th>
+            <th>Zipcode</th>
+            <th>Lat</th>
+            <th>Lng</th>
+        </tr>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = JSON.parse(this.responseText);
+                //console.log(result);
+                var tabledata = document.getElementById("mytabledata");
+
+                result.map((responce) => {
+
+                    var tr = document.createElement('tr');
+
+                    var td1 = document.createElement('td');
+                    var td2 = document.createElement('td');
+                    var td3 = document.createElement('td');
+                    var td4 = document.createElement('td');
+
+                    var text1 = document.createTextNode(responce.name);
+                    var text2 = document.createTextNode(responce.address.zipcode);
+                    var text3 = document.createTextNode(responce.address.geo.lat);
+                    var text4 = document.createTextNode(responce.address.geo.lng);
+
+                    td1.appendChild(text1);
+                    td2.appendChild(text2);
+                    td3.appendChild(text3);
+                    td4.appendChild(text4);
+
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tr.appendChild(td4);
+
+                    tabledata.appendChild(tr)
+                })
+            }
+        };
+    </script>
+
+</body>
+
+</html>

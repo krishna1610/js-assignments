@@ -64,6 +64,66 @@
             document.write('<br />');
         }
 
+
+       // class
+
+       class Rectangle {
+            constructor(height, width) {
+                this.height = height;
+                this.width = width;
+                console.log("another constructor");
+            }
+            
+            // Getter
+            get area() {
+                console.log("area");
+                return this.calcArea();
+            }
+
+            // Below is wrong
+            // get volume(depth) {
+            // }
+
+            volume(depth) {
+                return this.height * this.width * depth;
+            }
+            
+            
+            // Method
+            calcArea() {
+                console.log("calcArea");
+                const area = this.height * this.width;
+                return area;
+            }
+        }
+
+        const width1 = 0;
+        const width2 = 10;
+
+        const square1 = new Rectangle(0,0);
+        const square2 = new Rectangle(10, width2);
+        // const square2 = {
+        //     width: 10,
+        //     height: 10
+        // };
+        
+        const square3 = new Rectangle(5,25);
+        console.log(square3.calcArea());
+        console.log(square3.volume(10)); //5*25*10
+        console.log(square3.volume(15)); //5*25*15
+
+        console.log(square1.width);
+        console.log(square1.height);
+        console.log(square1.area);// area 
+        //calarea
+        // 0
+
+        console.log(square1.calcArea());//
+
+        console.log(square2.width);
+        console.log(square2.height);
+        console.log(square2.area);
+        console.log(square2.calcArea());
         
     </script>
 </body>

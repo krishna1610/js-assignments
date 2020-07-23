@@ -1,0 +1,9 @@
+Make an input box with a button next to it.
+Create a empty <div> to hold dynamically created paragraphs.
+
+
+i) On click of button add a paragraph to <div> with text what user provided in input box.
+ii) Add the same element to localStorage as an array.
+iii) On page reload read from  localStorage and create paragraphs again based on the array stored in localStorage.
+iv) Make sure empty strings are ignored as input.
+v) Handle the case where localStorage is cleared. Your app should handle that case to make a new array and update accordingly.

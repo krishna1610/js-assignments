@@ -1,0 +1,40 @@
+Q1. Make a button named 'toggle', when clicked checks if element with id="para" is visible then 
+make it invisible, otherwise make it visible again.
+
+Use Ternary Operator to do it. ( boolean ? value: value)
+
+Q2. Pass to a function an object called 'user' which has'personalInfo' and 'personalInfo' has 
+'yearsSinceMarried' which will be a number if it is present. Check if user is married. Function 
+should return a boolean. 
+
+User may or may not have 'yearsSinceMarried' in it.
+
+Use only && and || operators to return a boolean.
+Function must return true or false!
+
+Sample call with object: 
+	function checkMarried(user) {
+		return ____ && ____ && _______.........
+	}
+	// can also be empty.
+	var testUser = {
+	 personalInfo: {
+	 	yearsSinceMarried: 3
+	 }
+	};
+	checkMarried(testUser)
+
+
+Q3. Make a div with 500px height, 500px width and border: 1px solid red.
+    When the user brings mouse on top it should move away based on a random number generated 
+	between [30-150]. ( Means the margin in any direction will increase or decrease). Another 
+	random number between [1-4] will decide which direction margin to be changed.
+
+    So as you bring your mouse on top it should keep moving around every time mouseover event triggers.
+    You can decide margin directions as 1 is top, 2 is right, 3 is bottom, 4 is left.
+    Example:-
+    Mouseover Event 1: random number for margin = 50 and direction is 2
+    	Box will move 50px to left. ( marginRight will be 50px )
+    Mouseover Event 2: random number for margin = 100 and direction is 3
+    	Box will move 100px to top. ( marginBottom will be 100px )
+

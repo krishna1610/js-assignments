@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Operators</title>
+</head>
+
+<body>
+    <h1>Object Operators</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, iste rem, culpa, dolor totam beatae aliquam
+        eligendi necessitatibus commodi porro harum? Beatae, laboriosam perferendis. Earum fugiat impedit numquam ex
+        quae?
+    </p>
+    <p id="para">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas illo numquam, quaerat error autem similique nihil
+        officiis aliquam molestiae, esse beatae deserunt odit, necessitatibus adipisci soluta exercitationem enim aut
+        sapiente.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas illo numquam, quaerat error autem
+        similique nihil officiis aliquam molestiae, esse beatae deserunt odit, necessitatibus adipisci soluta
+        exercitationem
+        enim autsapiente.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste officia qui reprehenderit quod fuga nihil
+        consectetur repellat officiis, illum nisi et in accusantium? Quam quis nostrum quibusdam labore voluptatibus ex!
+    </p>
+    <ul>
+        <li>red</li>
+        <li>green</li>
+        <li>blue</li>
+        <li>black</li>
+        <li>white</li>
+    </ul>
+    <button onclick="showhide()">toggle</button>
+
+    <div style="height: 500px; width: 500px; border: 1px solid red;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;" onmouseover="moving()" id="div">
+
+    </div>
+
+    <script>
+        //1
+        function showhide() {
+            var x = document.getElementById("para");
+            var display = ((x.style.display === "none") ? "block" : "none");
+            console.log(display);
+            x.style.display = display;
+        }
+
+        //2
+
+        function checkMarried(user) {
+            // return user && user.personalInfo && (user.personalInfo.yearsSinceMarried !== undefined);
+            return (user != null) && (user.personalInfo != null) && (user.personalInfo.yearsSinceMarried != null);
+        }
+        // can also be empty.
+        var testUser = {
+            personalInfo: {
+                yearsSinceMarried: 3
+            }
+        };
+        console.log(checkMarried(testUser));
+
+        //3
+        function moving() {
+            var dir = 1 + Math.floor(Math.random() * 4.0); // 1,2,3,4
+            //console.log(dir);
+            var deltaMargin = 30 + Math.floor(Math.random() * 150);
+            let x = document.getElementById("div");
+
+            if (dir == 1) {
+                let oldmargin = parseInt(x.style.marginTop.replace("px", ""));
+                x.style.marginTop = (oldmargin + deltaMargin) + "px";
+            } else if (dir == 2) {
+                //let x = document.getElementById("div");
+                let oldmargin = parseInt(x.style.marginRight.replace("px", ""));
+                x.style.marginRight = (oldmargin + deltaMargin) + "px";
+
+            } else if (dir == 3) {
+                //let x = document.getElementById("div");
+                let oldmargin = parseInt(x.style.marginBottom.replace("px", ""));
+                x.style.marginBottom = (oldmargin + deltaMargin) + "px";
+
+            } else if (dir == 4) {
+                //let x = document.getElementById("div");
+                let oldmargin = parseInt(x.style.marginLeft.replace("px", ""));
+                x.style.marginLeft = (oldmargin + deltaMargin) + "px";
+
+            }
+
+
+            // var x = document.getElementById("div");
+            // var oldmargin = parseInt(x.style.margin.replace("px",""));
+            // x.style.margin = (oldmargin+deltaMargin) + "px";
+        }
+    </script>
+</body>
+
+</html>

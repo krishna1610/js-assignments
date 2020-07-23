@@ -1,0 +1,11 @@
+Make an ajax call to generate a dynamic table.
+
+Access name, zipcode, lat , lng and add as headings with respective data below it.
+
+Make sure your table has borders and looks clean.
+
+
+
+REST API URL to use:-
+
+https://jsonplaceholder.typicode.com/users
