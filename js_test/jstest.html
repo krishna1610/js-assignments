@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js test</title>
+</head>
+
+<body>
+    <h1>JS TEST</h1>
+    <input type="text" placeholder="item" id="item">
+    <input type="text" placeholder="color" id="color">
+    <button onclick="local()">submit</button>
+    <div id="div"></div>
+
+
+    <script>
+        var useritem = document.getElementById("item");
+        var usercolor = document.getElementById("color");
+        var div_input = document.getElementById("div");
+
+        // eg. [{text: "xyz", color: "red"}, {text: "abc", color: "blue"}]
+        var items = JSON.parse(localStorage.getItem("myItems2")) || [];
+
+        window.onload = function () {
+            for (var i = 0; i < items.length; i++) {
+                var pElement = document.createElement("p")
+                var item = items[i]; // eg. { text: "xyz", color: "red" }
+                pElement.innerText = item.text + item.color;
+                pElement.style.color = item.color;
+                div_input.appendChild(pElement)
+            }
+        }
+
+        function local() {
+            var user_item = useritem.value; // eg. apple
+            var user_color = usercolor.value; // eg. red
+            var para = document.createElement("p");
+            var textNode = document.createTextNode(user_item);
+            para.style.color = user_color;
+           
+            para.appendChild(textNode);
+            
+            div_input.appendChild(para);
+
+            // now add this new input to items list and store in local storage
+            var item = {
+                text: user_item,
+                color: user_color
+            };
+            items.push(item);
+            localStorage.setItem("myItems2", JSON.stringify(items));
+
+            useritem.value = "";
+            usercolor.value = "";
+            useritem.focus();
+
+        }
+
+       
+    </script>
+</body>
+
+</html>
